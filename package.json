@@ -1,0 +1,23 @@
+{
+  "name": "360Cam",
+  "version": "1.0.0",
+  "description": "Built with [A-Frame](https://aframe.io), a web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrforesm/FRNSC360.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrforesm/FRNSC360/issues"
+  },
+  "homepage": "https://github.com/jrforesm/FRNSC360#readme",
+  "dependencies": {
+    "aframe-svgfile-component": "^1.1.2"
+  }
+}

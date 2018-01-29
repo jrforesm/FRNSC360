@@ -7,6 +7,7 @@
   </title>
   <meta name="description" content="360Cam">
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="/node_modules/aframe-svgfile-component/dist/aframe-svgfile-component.js"></script>
   <!-- aframe extras -->
   <!-- <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script> -->
   <!-- webcomponentsjs -->
@@ -18,13 +19,40 @@
 </head>
 
 <body>
-  <a-scene>
+  <a-scene id="mainScene" antialias="true">
+
     <a-assets>
       <img id="foren_livingroom" src="assets/forensics_21.jpg">
+      <a-asset-item id="cellphone" src="assets/cellphone1.gltf"></a-asset-item>
     </a-assets>
-    
-    <a-sky src="#foren_livingroom"></a-sky>
+
+    <!-- <a-entity gltf-model="#cellphone"></a-entity> -->
+
+    <!-- <a-circle id="h-cellphone" class="hotspot" color="#CCC" radius="20" class="style-scope vr-scene" position="322.602 -72.176 -170.263"
+      geometry="radius:4.98" rotation="-38.331 -86.001 54.488" scale="3.245 3.691 7.494" material=""></a-circle> -->
+
+    <a-entity rotation="0 55 0">
+
+        <a-entity id="h-lamp" class="hotspot" geometry="primitive:plane;height:10;width:10" material="opacity:0;side:double;color:#f62e0f"
+        position="85 9 -51.299" rotation="0 125.764 0" scale="2 6 1"></a-entity>
+
+      <a-entity id="h-cellphone" class="hotspot" geometry="primitive:plane;height:10;width:10" material="opacity:0;side:double;color:#f62e0f"
+        position="84.455 -17.057 -41.299" rotation="0 125.764 0" scale="0.769 0.3 1"></a-entity>
+       <!-- <a-entity id="h-lamp" class="hotspot" svgfile="height:17.566765578635014;svgFile:assets/lamp.svg;width:10;color:red" position="99.751 0 -59.912" rotation="0 -48.41493368855456 0"></a-entity> -->
+
+      <a-sky src="#foren_livingroom"></a-sky>
+    </a-entity>
+
+
+
+    <a-camera>
+      <a-cursor id="cursor" material="color:orange;shader:flat;">
+        <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+      </a-cursor>
+    </a-camera>
   </a-scene>
+
   <script src="app.js"></script>
 </body>
 
